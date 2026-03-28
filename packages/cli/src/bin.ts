@@ -11,7 +11,7 @@ const program = new Command();
 
 
 program
-  .name("agent-kit")
+  .name("ai-agent-kit")
   .description(
     "CLI + MCP server for installing AI agent skills, workflows, and MCP configs",
   )

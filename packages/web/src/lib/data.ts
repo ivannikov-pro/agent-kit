@@ -4,6 +4,7 @@ import { join } from "path";
 import matter from "gray-matter";
 
 
+
 export type SkillData = {
   name: string;
   description: string;

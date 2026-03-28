@@ -4,7 +4,7 @@
   "description": "CLI + MCP server for installing AI agent skills, workflows, and MCP configs",
   "type": "module",
   "bin": {
-    "agent-kit": "./dist/bin.js"
+    "ai-agent-kit": "./dist/bin.js"
   },
   "exports": {
     ".": {

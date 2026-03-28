@@ -1,5 +1,5 @@
 {
-  "name": "agent-kit",
+  "name": "ai-agent-kit",
   "version": "0.1.0",
   "private": true,
   "description": "🛠️ CLI + MCP server + web catalog for AI agent skills, workflows, and MCP configs",

@@ -9,7 +9,7 @@ import type { SkillEntry } from "../types.js";
 
 export async function startMcpServer(): Promise<void> {
   const server = new McpServer({
-    name: "agent-kit",
+    name: "ai-agent-kit",
     version: "0.1.0",
   });
 
@@ -27,10 +27,10 @@ export async function startMcpServer(): Promise<void> {
     async ({ type }) => {
       const filter = type
         ? {
-            skills: type === "skill",
-            workflows: type === "workflow",
-            mcp: type === "mcp",
-          }
+          skills: type === "skill",
+          workflows: type === "workflow",
+          mcp: type === "mcp",
+        }
         : undefined;
 
       const resources = await listResources(filter);
@@ -169,5 +169,5 @@ export async function startMcpServer(): Promise<void> {
 
   await server.connect(transport);
 
-  console.error("agent-kit MCP server running on stdio");
+  console.error("ai-agent-kit MCP server running on stdio");
 }

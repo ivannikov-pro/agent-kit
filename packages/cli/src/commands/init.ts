@@ -9,7 +9,7 @@ import type { SkillEntry } from "../types.js";
 
 export async function initCommand(): Promise<void> {
   console.log();
-  console.log(chalk.bold("🛠️  agent-kit init"));
+  console.log(chalk.bold("🛠️  ai-agent-kit init"));
   console.log(chalk.dim("  Setting up AI agent resources for this project"));
   console.log();
 
@@ -58,7 +58,7 @@ export async function initCommand(): Promise<void> {
   if (toInstall.length > 0) {
     console.log(
       chalk.bold(
-        `  Run ${chalk.cyan("agent-kit add <name>")} to install a skill.`,
+        `  Run ${chalk.cyan("ai-agent-kit add <name>")} to install a skill.`,
       ),
     );
   }

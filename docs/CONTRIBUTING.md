@@ -1,4 +1,4 @@
-# Contributing to agent-kit
+# Contributing to ai-agent-kit
 
 ## Adding a New Skill
 

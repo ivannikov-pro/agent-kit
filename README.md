@@ -7,7 +7,7 @@ Your personal toolkit for AI-powered development — browse the catalog, install
 ## Monorepo Structure
 
 ```
-agent-kit/
+ai-agent-kit/
 ├── packages/cli/     — @ivannikov-pro/ai-agent-kit (npm CLI + MCP server)
 ├── packages/web/     — Web catalog (Next.js, deployed to GitHub Pages)
 ├── skills/           — Embedded skills (SKILL.md + assets)
@@ -36,13 +36,13 @@ npx @ivannikov-pro/ai-agent-kit init
 
 | Command | Description |
 |---------|-------------|
-| `agent-kit list` | List all available resources |
-| `agent-kit list --skills` | List only skills |
-| `agent-kit add <name>` | Install a skill or workflow |
-| `agent-kit add <name> --global` | Install globally (`~/.agents/`) |
-| `agent-kit remove <name>` | Remove an installed resource |
-| `agent-kit init` | Interactive project initialization |
-| `agent-kit mcp` | Start as MCP server (stdio) |
+| `ai-agent-kit list` | List all available resources |
+| `ai-agent-kit list --skills` | List only skills |
+| `ai-agent-kit add <name>` | Install a skill or workflow |
+| `ai-agent-kit add <name> --global` | Install globally (`~/.agents/`) |
+| `ai-agent-kit remove <name>` | Remove an installed resource |
+| `ai-agent-kit init` | Interactive project initialization |
+| `ai-agent-kit mcp` | Start as MCP server (stdio) |
 
 ## As MCP Server
 
@@ -51,7 +51,7 @@ Add to your AI agent's MCP config:
 ```json
 {
   "mcpServers": {
-    "agent-kit": {
+    "ai-agent-kit": {
       "command": "npx",
       "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
     }

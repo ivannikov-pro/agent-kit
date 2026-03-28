@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import { loadSkill, loadAllSkills } from "@/lib/data";
 
 
+
 export function generateStaticParams() {
   const skills = loadAllSkills();
 

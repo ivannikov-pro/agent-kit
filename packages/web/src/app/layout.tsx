@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 
+
 export const metadata: Metadata = {
   title: {
     default: "ai-agent-kit — AI Agent Toolkit by IVANNIKOV.PRO",
-    template: "%s | agent-kit",
+    template: "%s | ai-agent-kit",
   },
   description:
     "Browse and install curated AI agent skills, workflows, and MCP configs. Your open-source toolkit for AI-powered development.",
@@ -93,7 +94,7 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2.5 group">
               <span className="text-xl font-bold tracking-tight text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">
-                AGENT-KIT
+                AI-AGENT-KIT
               </span>
               <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-[var(--color-accent-dim)] text-[var(--color-accent)] border border-[var(--color-accent)]/20 uppercase tracking-wider">
                 OSS

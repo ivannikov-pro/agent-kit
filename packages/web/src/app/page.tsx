@@ -1,6 +1,7 @@
 import { loadAllSkills, loadRegistry } from "@/lib/data";
 
 
+
 const typeConfig: Record<string, { color: string; bg: string; border: string }> = {
   skill: {
     color: "text-cyan-400",
@@ -82,7 +83,7 @@ export default function HomePage() {
 
         <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
           <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            agent-kit
+            ai-agent-kit
           </span>
         </h1>
 

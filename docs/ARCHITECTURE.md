@@ -2,11 +2,11 @@
 
 ## Overview
 
-`agent-kit` is a monorepo that provides a CLI, MCP server, and web catalog for distributing AI agent skills, workflows, and MCP configurations.
+`ai-agent-kit` is a monorepo that provides a CLI, MCP server, and web catalog for distributing AI agent skills, workflows, and MCP configurations.
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                        agent-kit monorepo                    │
+│                     ai-agent-kit monorepo                    │
 │                                                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐ │
 │  │  packages/cli │  │ packages/web │  │  skills/ + workflows│ │
@@ -32,11 +32,11 @@ Published as `@ivannikov-pro/ai-agent-kit` on npm. Provides:
 
 | Command | Description |
 |---------|-------------|
-| `agent-kit list` | List all available resources from registry |
-| `agent-kit add <name>` | Install a skill/workflow into the project |
-| `agent-kit remove <name>` | Remove an installed resource |
-| `agent-kit init` | Interactive project setup |
-| `agent-kit mcp` | Start as MCP server (stdio) |
+| `ai-agent-kit list` | List all available resources from registry |
+| `ai-agent-kit add <name>` | Install a skill/workflow into the project |
+| `ai-agent-kit remove <name>` | Remove an installed resource |
+| `ai-agent-kit init` | Interactive project setup |
+| `ai-agent-kit mcp` | Start as MCP server (stdio) |
 
 **Tech:** TypeScript, commander, tsup (ESM build), Node 20+
 
@@ -51,7 +51,7 @@ Both resolve via GitHub Contents API. Set `GITHUB_TOKEN` for higher rate limits.
 
 ### 2. MCP Server (`packages/cli/src/mcp/`)
 
-Runs via `agent-kit mcp` command using stdio transport. Exposes 3 tools:
+Runs via `ai-agent-kit mcp` command using stdio transport. Exposes 3 tools:
 
 | Tool | Description |
 |------|-------------|
@@ -138,7 +138,7 @@ User runs:  npx @ivannikov-pro/ai-agent-kit add skill-base
        ▼
        ┌─ Parse source: "local:skills/skill-base"
        │   → owner: ivannikov-pro
-       │   → repo: agent-kit
+       │   → repo: ai-agent-kit
        │   → path: skills/skill-base
        │
        ▼
@@ -175,13 +175,13 @@ pnpm --filter web dev     # Dev server for web
 ## Directory Layout
 
 ```
-agent-kit/
+ai-agent-kit/
 ├── packages/
 │   ├── cli/                    # @ivannikov-pro/ai-agent-kit
 │   │   ├── src/
 │   │   │   ├── bin.ts          # CLI entry (commander)
 │   │   │   ├── index.ts        # Library exports
-│   │   │   ├── agent-kit.ts    # AgentKit class (API)
+│   │   │   ├── ai-agent-kit.ts    # AgentKit class (API)
 │   │   │   ├── types.ts        # TypeScript types
 │   │   │   ├── registry.ts     # Registry loader + cache
 │   │   │   ├── installer.ts    # Skill/workflow installer

@@ -13,20 +13,20 @@ npx @ivannikov-pro/ai-agent-kit add <skill-name>
 
 | Command | Description |
 |---------|-------------|
-| `agent-kit list` | List available resources |
-| `agent-kit list --skills` | List only skills |
-| `agent-kit add <name>` | Install a skill or workflow |
-| `agent-kit add <name> --global` | Install globally (`~/.agents/`) |
-| `agent-kit remove <name>` | Remove an installed resource |
-| `agent-kit init` | Interactive project setup |
-| `agent-kit mcp` | Start as MCP server (stdio) |
+| `ai-agent-kit list` | List available resources |
+| `ai-agent-kit list --skills` | List only skills |
+| `ai-agent-kit add <name>` | Install a skill or workflow |
+| `ai-agent-kit add <name> --global` | Install globally (`~/.agents/`) |
+| `ai-agent-kit remove <name>` | Remove an installed resource |
+| `ai-agent-kit init` | Interactive project setup |
+| `ai-agent-kit mcp` | Start as MCP server (stdio) |
 
 ## MCP Server
 
 ```json
 {
   "mcpServers": {
-    "agent-kit": {
+    "ai-agent-kit": {
       "command": "npx",
       "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
     }

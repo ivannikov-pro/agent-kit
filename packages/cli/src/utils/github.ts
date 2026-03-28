@@ -224,7 +224,7 @@ export async function downloadGitHubDir(
 function getHeaders(): Record<string, string> {
   const headers: Record<string, string> = {
     Accept: "application/vnd.github.v3+json",
-    "User-Agent": "agent-kit-cli",
+    "User-Agent": "ai-agent-kit-cli",
   };
 
   const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
