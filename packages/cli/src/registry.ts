@@ -41,7 +41,7 @@ export async function loadRegistry(): Promise<RegistryConfig> {
   // Fallback: fetch from GitHub
   {
     const url =
-      "https://raw.githubusercontent.com/ivannikov-pro/agent-kit/master/registry.json";
+      "https://raw.githubusercontent.com/ivannikov-pro/ai-agent-kit/master/registry.json";
 
     const res = await fetch(url);
 

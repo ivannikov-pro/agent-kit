@@ -100,7 +100,7 @@ export default async function SkillPage({
             Install this skill:
           </div>
           <code className="text-sm text-[var(--color-accent)]">
-            npx @ivannikov-pro/agent-kit add {skill.name}
+            npx @ivannikov-pro/ai-agent-kit add {skill.name}
           </code>
         </div>
       </header>

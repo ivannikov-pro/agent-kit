@@ -43,7 +43,7 @@ export default function RootLayout({
 
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com/ivannikov-pro/agent-kit"
+                href="https://github.com/ivannikov-pro/ai-agent-kit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--color-text-dim)] hover:text-[var(--color-text)] transition-colors text-sm"
@@ -51,7 +51,7 @@ export default function RootLayout({
                 GitHub
               </a>
               <a
-                href="https://www.npmjs.com/package/@ivannikov-pro/agent-kit"
+                href="https://www.npmjs.com/package/@ivannikov-pro/ai-agent-kit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--color-text-dim)] hover:text-[var(--color-text)] transition-colors text-sm"
@@ -75,7 +75,7 @@ export default function RootLayout({
             </a>
             {" · "}
             <code className="text-xs bg-[var(--color-surface)] px-2 py-0.5 rounded">
-              npx @ivannikov-pro/agent-kit
+              npx @ivannikov-pro/ai-agent-kit
             </code>
           </div>
         </footer>

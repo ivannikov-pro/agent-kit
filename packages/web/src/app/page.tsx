@@ -35,10 +35,10 @@ export default function HomePage() {
 
         <div className="flex flex-wrap justify-center gap-3">
           <code className="text-sm bg-[var(--color-surface)] border border-[var(--color-border)] px-4 py-2 rounded-lg text-[var(--color-accent)]">
-            npx @ivannikov-pro/agent-kit list
+            npx @ivannikov-pro/ai-agent-kit list
           </code>
           <code className="text-sm bg-[var(--color-surface)] border border-[var(--color-border)] px-4 py-2 rounded-lg text-[var(--color-accent)]">
-            npx @ivannikov-pro/agent-kit add skill-base
+            npx @ivannikov-pro/ai-agent-kit add skill-base
           </code>
         </div>
       </section>
@@ -175,7 +175,7 @@ export default function HomePage() {
           Install agent-kit globally or use with npx
         </p>
         <code className="text-sm bg-[var(--color-background)] border border-[var(--color-border)] px-6 py-3 rounded-lg text-[var(--color-accent)] inline-block">
-          npx @ivannikov-pro/agent-kit init
+          npx @ivannikov-pro/ai-agent-kit init
         </code>
       </section>
     </div>

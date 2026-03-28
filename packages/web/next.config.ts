@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/agent-kit" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/ai-agent-kit" : "",
   images: {
     unoptimized: true,
   },

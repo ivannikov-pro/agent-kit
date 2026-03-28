@@ -5,7 +5,7 @@ import { join, dirname } from "node:path";
 const GITHUB_API = "https://api.github.com";
 
 /** Default repo for local: sources */
-const DEFAULT_REPO = "ivannikov-pro/agent-kit";
+const DEFAULT_REPO = "ivannikov-pro/ai-agent-kit";
 
 
 type GitHubTreeItem = {
