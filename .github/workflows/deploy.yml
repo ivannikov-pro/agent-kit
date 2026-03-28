@@ -42,7 +42,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build web catalog
-        run: pnpm --filter @ivannikov-pro/agent-kit-web run build
+        run: pnpm --filter @ivannikov-pro/ai-agent-kit-web run build
         env:
           NODE_ENV: production
 

@@ -28,7 +28,7 @@
 
 ### 1. CLI (`packages/cli`)
 
-Published as `@ivannikov-pro/agent-kit` on npm. Provides:
+Published as `@ivannikov-pro/ai-agent-kit` on npm. Provides:
 
 | Command | Description |
 |---------|-------------|
@@ -44,7 +44,7 @@ Published as `@ivannikov-pro/agent-kit` on npm. Provides:
 
 The CLI supports two source types in `registry.json`:
 
-- `local:skills/skill-base` → fetches from `ivannikov-pro/agent-kit` repo (this repo)
+- `local:skills/skill-base` → fetches from `ivannikov-pro/ai-agent-kit` repo (this repo)
 - `github:owner/repo/path` → fetches from any GitHub repo
 
 Both resolve via GitHub Contents API. Set `GITHUB_TOKEN` for higher rate limits.
@@ -108,7 +108,7 @@ Central manifest mapping resource names to sources:
 ```json
 {
   "version": "1",
-  "repo": "ivannikov-pro/agent-kit",
+  "repo": "ivannikov-pro/ai-agent-kit",
   "skills": {
     "skill-base": {
       "source": "local:skills/skill-base",
@@ -130,7 +130,7 @@ Central manifest mapping resource names to sources:
 ## Data Flow
 
 ```
-User runs:  npx @ivannikov-pro/agent-kit add skill-base
+User runs:  npx @ivannikov-pro/ai-agent-kit add skill-base
                 │
                 ▼
        ┌─ Load registry.json (local or GitHub fallback)
@@ -143,7 +143,7 @@ User runs:  npx @ivannikov-pro/agent-kit add skill-base
        │
        ▼
        ┌─ GitHub Contents API: fetch dir listing
-       │   GET /repos/ivannikov-pro/agent-kit/contents/skills/skill-base
+       │   GET /repos/ivannikov-pro/ai-agent-kit/contents/skills/skill-base
        │
        ▼
        ┌─ Download each file recursively
@@ -177,7 +177,7 @@ pnpm --filter web dev     # Dev server for web
 ```
 agent-kit/
 ├── packages/
-│   ├── cli/                    # @ivannikov-pro/agent-kit
+│   ├── cli/                    # @ivannikov-pro/ai-agent-kit
 │   │   ├── src/
 │   │   │   ├── bin.ts          # CLI entry (commander)
 │   │   │   ├── index.ts        # Library exports
@@ -200,7 +200,7 @@ agent-kit/
 │   │   ├── tsconfig.json
 │   │   └── package.json
 │   │
-│   └── web/                    # @ivannikov-pro/agent-kit-web
+│   └── web/                    # @ivannikov-pro/ai-agent-kit-web
 │       ├── src/
 │       │   ├── app/
 │       │   │   ├── page.tsx

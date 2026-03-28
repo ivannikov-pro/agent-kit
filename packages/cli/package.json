@@ -1,5 +1,5 @@
 {
-  "name": "@ivannikov-pro/agent-kit",
+  "name": "@ivannikov-pro/ai-agent-kit",
   "version": "0.1.0",
   "description": "CLI + MCP server for installing AI agent skills, workflows, and MCP configs",
   "type": "module",
@@ -32,7 +32,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ivannikov-pro/agent-kit.git",
+    "url": "https://github.com/ivannikov-pro/ai-agent-kit.git",
     "directory": "packages/cli"
   },
   "engines": {

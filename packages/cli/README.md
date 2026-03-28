@@ -1,12 +1,12 @@
-# @ivannikov-pro/agent-kit
+# @ivannikov-pro/ai-agent-kit
 
 🛠️ CLI + MCP server for installing AI agent skills, workflows, and MCP configs.
 
 ## Install
 
 ```bash
-npx @ivannikov-pro/agent-kit list
-npx @ivannikov-pro/agent-kit add <skill-name>
+npx @ivannikov-pro/ai-agent-kit list
+npx @ivannikov-pro/ai-agent-kit add <skill-name>
 ```
 
 ## CLI Commands
@@ -28,7 +28,7 @@ npx @ivannikov-pro/agent-kit add <skill-name>
   "mcpServers": {
     "agent-kit": {
       "command": "npx",
-      "args": ["-y", "@ivannikov-pro/agent-kit", "mcp"]
+      "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
     }
   }
 }
@@ -45,7 +45,7 @@ npx @ivannikov-pro/agent-kit add <skill-name>
 ## Programmatic API
 
 ```typescript
-import { AgentKit } from "@ivannikov-pro/agent-kit";
+import { AgentKit } from "@ivannikov-pro/ai-agent-kit";
 
 const kit = new AgentKit();
 const resources = await kit.list();

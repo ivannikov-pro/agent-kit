@@ -1,8 +1,8 @@
-# @ivannikov-pro/agent-kit-web
+# @ivannikov-pro/ai-agent-kit-web
 
 Web catalog for browsing AI agent skills, workflows, and MCP configs.
 
-**Live:** [ivannikov-pro.github.io/agent-kit](https://ivannikov-pro.github.io/agent-kit)
+**Live:** [ivannikov-pro.github.io/ai-agent-kit](https://ivannikov-pro.github.io/ai-agent-kit)
 
 ## Features
 
@@ -23,7 +23,7 @@ Web catalog for browsing AI agent skills, workflows, and MCP configs.
 
 ```bash
 # From monorepo root
-pnpm --filter @ivannikov-pro/agent-kit-web dev
+pnpm --filter @ivannikov-pro/ai-agent-kit-web dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Build
 
 ```bash
-pnpm --filter @ivannikov-pro/agent-kit-web build
+pnpm --filter @ivannikov-pro/ai-agent-kit-web build
 ```
 
 Static output: `packages/web/out/`

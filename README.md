@@ -1,4 +1,4 @@
-# @ivannikov-pro/agent-kit
+# @ivannikov-pro/ai-agent-kit
 
 🛠️ CLI + MCP server + web catalog for AI agent skills, workflows, and MCP configs.
 
@@ -8,7 +8,7 @@ Your personal toolkit for AI-powered development — browse the catalog, install
 
 ```
 agent-kit/
-├── packages/cli/     — @ivannikov-pro/agent-kit (npm CLI + MCP server)
+├── packages/cli/     — @ivannikov-pro/ai-agent-kit (npm CLI + MCP server)
 ├── packages/web/     — Web catalog (Next.js, deployed to GitHub Pages)
 ├── skills/           — Embedded skills (SKILL.md + assets)
 ├── workflows/        — Embedded workflows
@@ -20,16 +20,16 @@ agent-kit/
 
 ```bash
 # List all available resources
-npx @ivannikov-pro/agent-kit list
+npx @ivannikov-pro/ai-agent-kit list
 
 # Install a skill into your project
-npx @ivannikov-pro/agent-kit add skill-base
+npx @ivannikov-pro/ai-agent-kit add skill-base
 
 # Install globally
-npx @ivannikov-pro/agent-kit add find-docs --global
+npx @ivannikov-pro/ai-agent-kit add find-docs --global
 
 # Interactive project setup
-npx @ivannikov-pro/agent-kit init
+npx @ivannikov-pro/ai-agent-kit init
 ```
 
 ## CLI Commands
@@ -53,7 +53,7 @@ Add to your AI agent's MCP config:
   "mcpServers": {
     "agent-kit": {
       "command": "npx",
-      "args": ["-y", "@ivannikov-pro/agent-kit", "mcp"]
+      "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
     }
   }
 }
@@ -70,7 +70,7 @@ Add to your AI agent's MCP config:
 ## Programmatic API
 
 ```typescript
-import { AgentKit } from "@ivannikov-pro/agent-kit";
+import { AgentKit } from "@ivannikov-pro/ai-agent-kit";
 
 const kit = new AgentKit();
 
