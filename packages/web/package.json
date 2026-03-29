@@ -2,6 +2,21 @@
   "name": "@ivannikov-pro/ai-agent-kit-web",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Aleksandr Ivannikov",
+    "email": "hi@ivannikov.pro",
+    "url": "https://ivannikov.pro"
+  },
+  "homepage": "https://github.com/ivannikov-pro/ivannikov-pro-platform#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform/issues",
+    "email": "hi@ivannikov.pro"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -25,5 +40,9 @@
     "eslint": "^9.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
   }
 }
