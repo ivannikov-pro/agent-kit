@@ -76,13 +76,13 @@ async function parseFrontmatter(content, relPath) {
 function renderCatalog(registry) {
   let lines = ["# AI Agent Catalog\n", `Generated at: ${new Date().toISOString()}\n`];
   
-  for (const type of ["skills", "workflows", "mcp-servers"]) {
+  for (const type of ["skills", "workflows", "mcp_servers"]) {
     const items = registry[type] || {};
     const keys = Object.keys(items).sort();
     if (!keys.length) continue;
     
     lines.push(`## ${type.toUpperCase()} (${keys.length})\n`);
-    if (type === "mcp-servers") {
+    if (type === "mcp_servers") {
       lines.push("| Package | Name | Category | Description | Source |");
       lines.push("| --- | --- | --- | --- | --- |");
       for (const k of keys) {
@@ -106,7 +106,7 @@ function renderCatalog(registry) {
 async function main() {
   const registryPath = path.join(process.cwd(), "registry.json");
   const catalogPath = path.join(process.cwd(), "CATALOG.md");
-  let registryObj = { version: "1.0", repo: "ivannikov-pro/ai-agent-kit", skills: {}, workflows: {}, "mcp-servers": {} };
+  let registryObj = { version: "1.0", repo: "ivannikov-pro/ai-agent-kit", skills: {}, workflows: {}, "mcp_servers": {} };
 
   // Parse skills
   const skillsDir = path.join(process.cwd(), "skills");
@@ -189,7 +189,7 @@ async function main() {
   }
 
   // Parse MCP servers if directory exists
-  const mcpDir = path.join(process.cwd(), "mcp-servers");
+  const mcpDir = path.join(process.cwd(), "mcp_servers");
   if (fsSync.existsSync(mcpDir)) {
     const mcpItems = await fs.readdir(mcpDir);
     for (const itemName of mcpItems) {
@@ -204,7 +204,7 @@ async function main() {
       if (stat.isDirectory()) {
          mdPath = path.join(itemPath, "MCP.md");
          if (!fsSync.existsSync(mdPath)) {
-            addWarning(`Missing MCP.md in mcp-servers/${itemName}`);
+            addWarning(`Missing MCP.md in mcp_servers/${itemName}`);
             continue;
          }
       } else {
@@ -213,7 +213,7 @@ async function main() {
       }
 
       const content = await fs.readFile(mdPath, "utf8");
-      const extStr = stat.isDirectory() ? `mcp-servers/${mcpName}/MCP.md` : `mcp-servers/${itemName}`;
+      const extStr = stat.isDirectory() ? `mcp_servers/${mcpName}/MCP.md` : `mcp_servers/${itemName}`;
       const frontmatter = await parseFrontmatter(content, extStr);
       if (!frontmatter) continue;
 
@@ -246,10 +246,10 @@ async function main() {
       const tags = (frontmatter.tags || []).map(t => t.toLowerCase());
       const category = frontmatter.category || detectCategory(mcpName, `${mcpName} ${frontmatter.description} ${tags.join(" ")}`);
 
-      registryObj["mcp-servers"][mcpName] = {
+      registryObj["mcp_servers"][mcpName] = {
         package: frontmatter.package,
         description: frontmatter.description,
-        source: stat.isDirectory() ? `local:mcp-servers/${mcpName}` : `local:mcp-servers/${mcpName}.md`,
+        source: stat.isDirectory() ? `local:mcp_servers/${mcpName}` : `local:mcp_servers/${mcpName}.md`,
         category,
         tags,
         risk,
@@ -272,7 +272,7 @@ async function main() {
     await fs.writeFile(catalogPath, renderCatalog(registryObj), "utf8");
   }
   
-  const totalItems = Object.keys(registryObj.skills).length + Object.keys(registryObj.workflows).length + Object.keys(registryObj["mcp-servers"]).length;
+  const totalItems = Object.keys(registryObj.skills).length + Object.keys(registryObj.workflows).length + Object.keys(registryObj["mcp_servers"]).length;
   console.log(`\n📊 Checked items in registry. Wrote ${totalItems} total items.`);
 
   if (warnings.length) {

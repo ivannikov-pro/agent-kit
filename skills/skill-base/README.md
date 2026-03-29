@@ -54,18 +54,18 @@ git clone https://github.com/ivannikov-pro/skill-base.git .agents/skills/skill-b
 
 ### Where agents look for skills
 
-| Agent | Global (user-level) | Project (workspace) | Source |
-|-------|---------------------|---------------------|--------|
-| Claude Code | `~/.claude/skills/` | `.claude/skills/` | [docs](https://docs.anthropic.com/en/docs/claude-code/skills) |
-| Gemini CLI | `~/.gemini/skills/` | `.gemini/skills/` or `.agents/skills/` | [docs](https://geminicli.com/docs/skills/using-skills) |
-| Antigravity | `~/.gemini/antigravity/skills/` | `.agent/skills/` or `.agents/skills/` | [docs](https://antigravity.google) |
-| Cursor | `~/.cursor/skills/` | `.cursor/skills/` | [docs](https://docs.cursor.com/agent/skills) |
-| Copilot (VS Code) | — | `.github/skills/` or `.agents/skills/` | [docs](https://code.visualstudio.com/docs/copilot/copilot-extensibility-overview) |
-| Windsurf | `~/.codeium/windsurf/skills/` | `.windsurf/skills/` | [docs](https://docs.windsurf.com/windsurf/skills) |
-| Kiro | `~/.kiro/skills/` | `.kiro/skills/` | [docs](https://kiro.dev/docs/skills/) |
-| Codex CLI | `~/.codex/skills/` | `.codex/skills/` | [docs](https://openai.com/codex) |
-| OpenCode | `~/.agents/skills/` | `.agents/skills/` | [docs](https://opencode.ai/docs/skills) |
-| AdaL CLI | `~/.adal/skills/` | `.adal/skills/` | [docs](https://sylph.ai) |
+| Agent             | Global (user-level)             | Project (workspace)                    | Source                                                                            |
+| ----------------- | ------------------------------- | -------------------------------------- | --------------------------------------------------------------------------------- |
+| Claude Code       | `~/.claude/skills/`             | `.claude/skills/`                      | [docs](https://docs.anthropic.com/en/docs/claude-code/skills)                     |
+| Gemini CLI        | `~/.gemini/skills/`             | `.gemini/skills/` or `.agents/skills/` | [docs](https://geminicli.com/docs/skills/using-skills)                            |
+| Antigravity       | `~/.gemini/antigravity/skills/` | `.agent/skills/` or `.agents/skills/`  | [docs](https://antigravity.google)                                                |
+| Cursor            | `~/.cursor/skills/`             | `.cursor/skills/`                      | [docs](https://docs.cursor.com/agent/skills)                                      |
+| Copilot (VS Code) | —                               | `.github/skills/` or `.agents/skills/` | [docs](https://code.visualstudio.com/docs/copilot/copilot-extensibility-overview) |
+| Windsurf          | `~/.codeium/windsurf/skills/`   | `.windsurf/skills/`                    | [docs](https://docs.windsurf.com/windsurf/skills)                                 |
+| Kiro              | `~/.kiro/skills/`               | `.kiro/skills/`                        | [docs](https://kiro.dev/docs/skills/)                                             |
+| Codex CLI         | `~/.codex/skills/`              | `.codex/skills/`                       | [docs](https://openai.com/codex)                                                  |
+| OpenCode          | `~/.agents/skills/`             | `.agents/skills/`                      | [docs](https://opencode.ai/docs/skills)                                           |
+| AdaL CLI          | `~/.adal/skills/`               | `.adal/skills/`                        | [docs](https://sylph.ai)                                                          |
 
 > **Tip:** Install globally to use across all projects. Each agent has its own global directory — see table above.
 

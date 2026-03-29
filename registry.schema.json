@@ -40,7 +40,13 @@
             },
             "risk": {
               "type": "string",
-              "enum": ["none", "safe", "critical", "offensive", "unknown"],
+              "enum": [
+                "none",
+                "safe",
+                "critical",
+                "offensive",
+                "unknown"
+              ],
               "description": "The risk level of the skill"
             },
             "version": {
@@ -95,7 +101,7 @@
       },
       "additionalProperties": false
     },
-    "mcp": {
+    "mcp_servers": {
       "type": "object",
       "description": "Map of MCP server names to their configurations",
       "patternProperties": {
@@ -126,7 +132,7 @@
     "repo",
     "skills",
     "workflows",
-    "mcp"
+    "mcp_servers"
   ],
   "additionalProperties": false
 }

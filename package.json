@@ -1,5 +1,5 @@
 {
-  "name": "ai-agent-kit",
+  "name": "@ivannikov-pro/ai-agent-kit-monorepo",
   "version": "0.1.0",
   "description": "🛠️ CLI + MCP server + web catalog for AI agent skills, workflows, and MCP configs",
   "keywords": [
@@ -37,9 +37,13 @@
     "lint": "turbo run lint",
     "registry:build": "node scripts/update-registry.mjs",
     "registry:validate": "node scripts/update-registry.mjs --strict",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
     "husky": "^9.1.7",
     "js-yaml": "^4.1.1",
     "lint-staged": "^16.4.0",

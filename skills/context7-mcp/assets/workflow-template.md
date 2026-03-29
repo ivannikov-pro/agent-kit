@@ -42,8 +42,8 @@ Use this workflow whenever you need up-to-date library documentation, API refere
 <!-- CUSTOMIZE: Replace with your project's actual libraries -->
 <!-- Use `resolve-library-id` to find the correct Context7 ID -->
 
-| Library | Context7 ID |
-|---------|------------|
+| Library     | Context7 ID    |
+| ----------- | -------------- |
 | Example lib | `/org/project` |
 
 ## Error Handling

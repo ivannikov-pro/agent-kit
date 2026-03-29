@@ -9,10 +9,10 @@
 │                     ai-agent-kit monorepo                    │
 │                                                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐ │
-│  │  packages/cli │  │ packages/web │  │  skills/ + workflows│ │
-│  │              │  │              │  │  (embedded content) │ │
-│  │  CLI + MCP   │  │  Next.js SSG │  │                    │ │
-│  │  server      │  │  catalog     │  │  SKILL.md files    │ │
+│  │  packages/cli │  │ packages/web │  │ skills/, workflows,│ │
+│  │              │  │              │  │ & mcp_servers/     │ │
+│  │  CLI + MCP   │  │  Next.js SSG │  │ (embedded content) │ │
+│  │  server      │  │  catalog     │  │                    │ │
 │  └──────┬───────┘  └──────┬───────┘  └─────────┬──────────┘ │
 │         │                 │                     │            │
 │         └─────────────────┴─────────┬───────────┘            │
@@ -120,7 +120,7 @@ Central manifest mapping resource names to sources:
     }
   },
   "workflows": {},
-  "mcp": {
+  "mcp_servers": {
     "ai-notify-tg": {
       "package": "@ivannikov-pro/ai-notify-tg",
       "description": "..."
@@ -224,11 +224,12 @@ ai-agent-kit/
 │   ├── skill-base/
 │   └── find-docs/
 │
-├── workflows/                  # Embedded workflows (future)
+├── workflows/                  # Embedded workflows
+│
+├── mcp_servers/                # Embedded MCP configurations
 │
 ├── docs/                       # Documentation
-│   ├── ARCHITECTURE.md         # This file
-│   └── CONTRIBUTING.md         # How to contribute
+│   └── ARCHITECTURE.md         # This file
 │
 ├── .github/
 │   └── workflows/
@@ -238,6 +239,20 @@ ai-agent-kit/
 ├── pnpm-workspace.yaml
 ├── turbo.json
 ├── package.json                # Root (private)
+├── AGENTS.md                   # Next.js AI agent rules
+├── CLAUDE.md                   # General AI agent instructions pointer
+├── CONTRIBUTING.md             # How to contribute
 ├── README.md
+├── CHANGELOG.md                # Project history
+├── BACKLOG.md                  # Future tasks & enhancements
 └── LICENSE (MIT)
 ```
+
+---
+
+## Conventions
+
+- **Formatting & Linting**: We use a strict custom ESLint flat config (`@stylistic/eslint-plugin`). Prettier is **not** used. We enforce specific layout rules (e.g., 3 blank lines after imports, 2 blank lines between blocks).
+- **Package Management**: Monorepo uses `pnpm` workspace protocol.
+- **Versioning**: The project uses `Changesets` to automate and sync versioning across packages.
+- **AI Agent Context**: Key LLM system prompts (`CLAUDE.md`, `AGENTS.md`) sit at the repo root so they apply to all workspace packages. Markdown tables should be generated without excessive space padding.

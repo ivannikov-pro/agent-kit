@@ -9,7 +9,7 @@ assignees: ivannikov-pro
 **Type of AI Component**
 - [ ] Skill (`skills/`)
 - [ ] Workflow (`workflows/`)
-- [ ] MCP Server (`mcp/`)
+- [ ] MCP Server (`mcp-servers/`)
 
 **Name of Component**
 e.g., `awesome-dev-workflow` or `postgres-db-mcp`

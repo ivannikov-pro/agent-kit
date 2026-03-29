@@ -124,36 +124,36 @@ Run directly without installing: `npx ctx7@latest <command>`
 
 ### Writing good queries
 
-| Quality | Example |
-|---------|---------|
-| Good | `"How to set up authentication with JWT in Express.js"` |
-| Good | `"React useEffect cleanup function with async operations"` |
-| Bad | `"auth"` |
-| Bad | `"hooks"` |
+| Quality | Example                                                    |
+| ------- | ---------------------------------------------------------- |
+| Good    | `"How to set up authentication with JWT in Express.js"`    |
+| Good    | `"React useEffect cleanup function with async operations"` |
+| Bad     | `"auth"`                                                   |
+| Bad     | `"hooks"`                                                  |
 
 ## Common Library IDs
 
-| Domain | Library | Context7 ID |
-|--------|---------|------------|
-| Frontend | Next.js | `/vercel/next.js` |
-| Frontend | React | `/facebook/react` |
-| Frontend | Vue.js | `/vuejs/vue` |
-| Frontend | Svelte | `/sveltejs/svelte` |
-| Styling | Tailwind CSS | `/tailwindlabs/tailwindcss` |
-| Backend | Express | `/expressjs/express` |
-| Backend | Fastify | `/fastify/fastify` |
-| Database | Prisma | `/prisma/prisma` |
-| Database | Drizzle | `/drizzle-team/drizzle-orm` |
-| BaaS | Supabase | `/supabase/supabase` |
-| Blockchain | Ethers.js v6 | `/websites/ethers_v6` |
-| Blockchain | Viem | `/wevm/viem` |
-| Blockchain | Wagmi | `/wevm/wagmi` |
-| Blockchain | OpenZeppelin | `/openzeppelin/contracts` |
-| Blockchain | Foundry | `/foundry-rs/foundry` |
-| Blockchain | Hardhat | `/nomicfoundation/hardhat` |
-| Wallet | Reown AppKit | `/websites/reown` |
-| Testing | Vitest | `/vitest-dev/vitest` |
-| Testing | Playwright | `/microsoft/playwright` |
+| Domain     | Library      | Context7 ID                 |
+| ---------- | ------------ | --------------------------- |
+| Frontend   | Next.js      | `/vercel/next.js`           |
+| Frontend   | React        | `/facebook/react`           |
+| Frontend   | Vue.js       | `/vuejs/vue`                |
+| Frontend   | Svelte       | `/sveltejs/svelte`          |
+| Styling    | Tailwind CSS | `/tailwindlabs/tailwindcss` |
+| Backend    | Express      | `/expressjs/express`        |
+| Backend    | Fastify      | `/fastify/fastify`          |
+| Database   | Prisma       | `/prisma/prisma`            |
+| Database   | Drizzle      | `/drizzle-team/drizzle-orm` |
+| BaaS       | Supabase     | `/supabase/supabase`        |
+| Blockchain | Ethers.js v6 | `/websites/ethers_v6`       |
+| Blockchain | Viem         | `/wevm/viem`                |
+| Blockchain | Wagmi        | `/wevm/wagmi`               |
+| Blockchain | OpenZeppelin | `/openzeppelin/contracts`   |
+| Blockchain | Foundry      | `/foundry-rs/foundry`       |
+| Blockchain | Hardhat      | `/nomicfoundation/hardhat`  |
+| Wallet     | Reown AppKit | `/websites/reown`           |
+| Testing    | Vitest       | `/vitest-dev/vitest`        |
+| Testing    | Playwright   | `/microsoft/playwright`     |
 
 ## New Project Setup
 
@@ -177,10 +177,10 @@ documentation lookup. Do this whenever you detect:
 
 ### Templates
 
-| Template | Purpose | Copy to |
-|----------|---------|---------|
+| Template                                            | Purpose                                         | Copy to                          |
+| --------------------------------------------------- | ----------------------------------------------- | -------------------------------- |
 | [workflow-template.md](assets/workflow-template.md) | Project workflow for `/find-docs` slash command | `.agents/workflows/find-docs.md` |
-| [agents-md-section.md](assets/agents-md-section.md) | Context7 section for `AGENTS.md` | Append to `AGENTS.md` |
+| [agents-md-section.md](assets/agents-md-section.md) | Context7 section for `AGENTS.md`                | Append to `AGENTS.md`            |
 
 ## Authentication
 
@@ -198,12 +198,12 @@ Get a free API key at [context7.com/dashboard](https://context7.com/dashboard).
 
 ## Error Handling
 
-| Error | Action |
-|-------|--------|
-| Quota exceeded | Inform user, suggest getting API key at context7.com/dashboard |
-| No results | Refine query, try alternative library name |
-| Wrong library match | Be explicit about which library was selected and why |
-| Network error | Fall back to training data, but **tell the user** |
+| Error               | Action                                                         |
+| ------------------- | -------------------------------------------------------------- |
+| Quota exceeded      | Inform user, suggest getting API key at context7.com/dashboard |
+| No results          | Refine query, try alternative library name                     |
+| Wrong library match | Be explicit about which library was selected and why           |
+| Network error       | Fall back to training data, but **tell the user**              |
 
 ## ⚠️ Gotchas
 

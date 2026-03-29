@@ -30,14 +30,14 @@ Agent: (auto-fetches Next.js 15 docs via Context7) → gives correct, current co
 
 ### Global skills directory paths
 
-| Agent | Global skills path |
-|-------|--------------------|      
+| Agent       | Global skills path              |
+| ----------- | ------------------------------- |
 | Antigravity | `~/.gemini/antigravity/skills/` |
-| Gemini CLI | `~/.gemini/skills/` |
-| Claude Code | `~/.claude/skills/` |
-| Cursor | `~/.cursor/skills/` |
-| Windsurf | `~/.codeium/windsurf/skills/` |
-| Codex CLI | `~/.codex/skills/` |
+| Gemini CLI  | `~/.gemini/skills/`             |
+| Claude Code | `~/.claude/skills/`             |
+| Cursor      | `~/.cursor/skills/`             |
+| Windsurf    | `~/.codeium/windsurf/skills/`   |
+| Codex CLI   | `~/.codex/skills/`              |
 
 ### Option 1: Clone directly into skills directory (recommended)
 
@@ -116,23 +116,23 @@ Or just ask your agent: *"Set up Context7 docs lookup for this project"* — the
 
 ## Common Library IDs
 
-| Domain | Library | Context7 ID |
-|--------|---------|------------|
-| Frontend | Next.js | `/vercel/next.js` |
-| Frontend | React | `/facebook/react` |
-| Frontend | Vue.js | `/vuejs/vue` |
-| Styling | Tailwind CSS | `/tailwindlabs/tailwindcss` |
-| Backend | Express | `/expressjs/express` |
-| Database | Prisma | `/prisma/prisma` |
-| Database | Drizzle | `/drizzle-team/drizzle-orm` |
-| BaaS | Supabase | `/supabase/supabase` |
-| Blockchain | Ethers.js v6 | `/websites/ethers_v6` |
-| Blockchain | Viem | `/wevm/viem` |
-| Blockchain | OpenZeppelin | `/openzeppelin/contracts` |
-| Blockchain | Foundry | `/foundry-rs/foundry` |
-| Wallet | Reown AppKit | `/websites/reown` |
-| Testing | Vitest | `/vitest-dev/vitest` |
-| Testing | Playwright | `/microsoft/playwright` |
+| Domain     | Library      | Context7 ID                 |
+| ---------- | ------------ | --------------------------- |
+| Frontend   | Next.js      | `/vercel/next.js`           |
+| Frontend   | React        | `/facebook/react`           |
+| Frontend   | Vue.js       | `/vuejs/vue`                |
+| Styling    | Tailwind CSS | `/tailwindlabs/tailwindcss` |
+| Backend    | Express      | `/expressjs/express`        |
+| Database   | Prisma       | `/prisma/prisma`            |
+| Database   | Drizzle      | `/drizzle-team/drizzle-orm` |
+| BaaS       | Supabase     | `/supabase/supabase`        |
+| Blockchain | Ethers.js v6 | `/websites/ethers_v6`       |
+| Blockchain | Viem         | `/wevm/viem`                |
+| Blockchain | OpenZeppelin | `/openzeppelin/contracts`   |
+| Blockchain | Foundry      | `/foundry-rs/foundry`       |
+| Wallet     | Reown AppKit | `/websites/reown`           |
+| Testing    | Vitest       | `/vitest-dev/vitest`        |
+| Testing    | Playwright   | `/microsoft/playwright`     |
 
 Use `resolve-library-id` to find IDs for any library not listed here.
 
@@ -140,13 +140,13 @@ Use `resolve-library-id` to find IDs for any library not listed here.
 
 ```mermaid
 flowchart LR
-    A[User asks about a library] --> B{Library ID known?}
-    B -->|No| C[resolve-library-id]
-    C --> D[Select best match]
-    B -->|Yes| E[query-docs]
+    A["User asks about a library"] --> B{"Library ID known?"}
+    B -->|No| C["resolve-library-id"]
+    C --> D["Select best match"]
+    B -->|Yes| E["query-docs"]
     D --> E
-    E --> F[Return current docs + code examples]
-    F --> G[Agent uses docs in response]
+    E --> F["Return current docs + code examples"]
+    F --> G["Agent uses docs in response"]
 ```
 
 ## Compatibility

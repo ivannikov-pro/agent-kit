@@ -49,9 +49,9 @@ npm install <package>
 
 ## Key Options
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `option` | `string` | `""` | What it does |
+| Option   | Type     | Default | Description  |
+| -------- | -------- | ------- | ------------ |
+| `option` | `string` | `""`    | What it does |
 
 ## Best Practices
 
