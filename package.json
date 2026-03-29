@@ -1,33 +1,62 @@
 {
-  "name": "ai-agent-kit",
+  "name": "@ivannikov-pro/ai-agent-kit-monorepo",
   "version": "0.1.0",
-  "private": true,
   "description": "🛠️ CLI + MCP server + web catalog for AI agent skills, workflows, and MCP configs",
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint"
-  },
   "keywords": [
     "ai-agent",
     "agent-skills",
     "agentskills",
     "cli",
     "mcp",
+    "mcp-server",
     "skills",
     "workflows"
   ],
-  "author": "ivannikov-pro",
+  "private": true,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "license": "MIT",
+  "author": {
+    "name": "Aleksandr Ivannikov",
+    "email": "hi@ivannikov.pro",
+    "url": "https://ivannikov.pro"
+  },
+  "homepage": "https://github.com/ivannikov-pro/ivannikov-pro-platform#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ivannikov-pro/ai-agent-kit.git"
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform.git"
   },
-  "engines": {
-    "node": ">=20"
+  "bugs": {
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform/issues",
+    "email": "hi@ivannikov.pro"
   },
-  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "registry:build": "node scripts/update-registry.mjs",
+    "registry:validate": "node scripts/update-registry.mjs --strict",
+    "prepare": "husky",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish"
+  },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
+    "husky": "^9.1.7",
+    "js-yaml": "^4.1.1",
+    "lint-staged": "^16.4.0",
+    "sharp": "^0.34.5",
     "turbo": "^2.5.4"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs,tsx,jsx}": "eslint --fix"
   }
 }

@@ -1,0 +1,11 @@
+# Global Code Owner
+* @ivannikov-pro
+
+# Packages and Core Infrastructure
+/packages/ @ivannikov-pro
+/scripts/ @ivannikov-pro
+
+# AI Agents and Connectors
+/mcp-servers/ @ivannikov-pro
+/skills/ @ivannikov-pro
+/workflows/ @ivannikov-pro

@@ -1,8 +1,8 @@
 import { readFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-
 import type { RegistryConfig, ResourceInfo } from "./types.js";
+
 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,7 +23,7 @@ export async function loadRegistry(): Promise<RegistryConfig> {
   // Try local registry: packages/cli/dist/ → monorepo root
   const localPaths = [
     join(__dirname, "..", "..", "..", "registry.json"), // from dist/ → root
-    join(__dirname, "..", "registry.json"),             // fallback: old layout
+    join(__dirname, "..", "registry.json"), // fallback: old layout
   ];
 
   for (const localPath of localPaths) {
@@ -40,8 +40,7 @@ export async function loadRegistry(): Promise<RegistryConfig> {
 
   // Fallback: fetch from GitHub
   {
-    const url =
-      "https://raw.githubusercontent.com/ivannikov-pro/ai-agent-kit/master/registry.json";
+    const url = "https://raw.githubusercontent.com/ivannikov-pro/ai-agent-kit/master/registry.json";
 
     const res = await fetch(url);
 
@@ -69,8 +68,7 @@ export async function listResources(filter?: {
   const registry = await loadRegistry();
   const resources: ResourceInfo[] = [];
 
-  const showAll =
-    !filter || (!filter.skills && !filter.workflows && !filter.mcp);
+  const showAll = !filter || (!filter.skills && !filter.workflows && !filter.mcp_servers);
 
 
   if (showAll || filter?.skills) {
@@ -98,11 +96,11 @@ export async function listResources(filter?: {
   }
 
 
-  if (showAll || filter?.mcp) {
-    for (const [name, entry] of Object.entries(registry.mcp)) {
+  if (showAll || filter?.mcp_servers) {
+    for (const [name, entry] of Object.entries(registry.mcp_servers)) {
       resources.push({
         name,
-        type: "mcp",
+        type: "mcp server",
         description: entry.description,
         source: entry.package,
       });
@@ -118,7 +116,7 @@ export async function listResources(filter?: {
  */
 export async function findResource(
   name: string,
-): Promise<{ type: "skill" | "workflow" | "mcp"; entry: unknown } | null> {
+): Promise<{ type: "skill" | "workflow" | "mcp server"; entry: unknown } | null> {
   const registry = await loadRegistry();
 
   if (registry.skills[name]) {
@@ -129,8 +127,8 @@ export async function findResource(
     return { type: "workflow", entry: registry.workflows[name] };
   }
 
-  if (registry.mcp[name]) {
-    return { type: "mcp", entry: registry.mcp[name] };
+  if (registry.mcp_servers[name]) {
+    return { type: "mcp server", entry: registry.mcp_servers[name] };
   }
 
   return null;

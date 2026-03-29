@@ -9,10 +9,10 @@
 │                     ai-agent-kit monorepo                    │
 │                                                              │
 │  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐ │
-│  │  packages/cli │  │ packages/web │  │  skills/ + workflows│ │
-│  │              │  │              │  │  (embedded content) │ │
-│  │  CLI + MCP   │  │  Next.js SSG │  │                    │ │
-│  │  server      │  │  catalog     │  │  SKILL.md files    │ │
+│  │  packages/cli │  │ packages/web │  │ skills/, workflows,│ │
+│  │              │  │              │  │ & mcp_servers/     │ │
+│  │  CLI + MCP   │  │  Next.js SSG │  │ (embedded content) │ │
+│  │  server      │  │  catalog     │  │                    │ │
 │  └──────┬───────┘  └──────┬───────┘  └─────────┬──────────┘ │
 │         │                 │                     │            │
 │         └─────────────────┴─────────┬───────────┘            │
@@ -24,6 +24,8 @@
 └──────────────────────────────────────────────────────────────┘
 ```
 
+---
+
 ## Components
 
 ### 1. CLI (`packages/cli`)
@@ -31,7 +33,7 @@
 Published as `@ivannikov-pro/ai-agent-kit` on npm. Provides:
 
 | Command | Description |
-|---------|-------------|
+| --- | --- |
 | `ai-agent-kit list` | List all available resources from registry |
 | `ai-agent-kit add <name>` | Install a skill/workflow into the project |
 | `ai-agent-kit remove <name>` | Remove an installed resource |
@@ -54,7 +56,7 @@ Both resolve via GitHub Contents API. Set `GITHUB_TOKEN` for higher rate limits.
 Runs via `ai-agent-kit mcp` command using stdio transport. Exposes 3 tools:
 
 | Tool | Description |
-|------|-------------|
+| --- | --- |
 | `list_resources` | List skills/workflows/MCP with optional type filter |
 | `install_resource` | Install a resource by name |
 | `search_resources` | Search by keyword/tag |
@@ -66,7 +68,7 @@ Runs via `ai-agent-kit mcp` command using stdio transport. Exposes 3 tools:
 Static site generated with Next.js. Reads `registry.json` and `skills/*/SKILL.md` at build time.
 
 | Route | Description |
-|-------|-------------|
+| --- | --- |
 | `/` | Homepage — skill cards, stats, MCP section |
 | `/skills/[name]` | Skill detail — rendered SKILL.md with metadata |
 
@@ -118,7 +120,7 @@ Central manifest mapping resource names to sources:
     }
   },
   "workflows": {},
-  "mcp": {
+  "mcp_servers": {
     "ai-notify-tg": {
       "package": "@ivannikov-pro/ai-notify-tg",
       "description": "..."
@@ -127,10 +129,12 @@ Central manifest mapping resource names to sources:
 }
 ```
 
+---
+
 ## Data Flow
 
 ```
-User runs:  npx @ivannikov-pro/ai-agent-kit add skill-base
+User runs:  npx @ivannikov-pro/ai-agent-kit@latest add skill-base
                 │
                 ▼
        ┌─ Load registry.json (local or GitHub fallback)
@@ -153,10 +157,12 @@ User runs:  npx @ivannikov-pro/ai-agent-kit add skill-base
        └─ Write to .agents/skills/skill-base/
 ```
 
+---
+
 ## Build System
 
 | Tool | Purpose |
-|------|---------|
+| --- | --- |
 | **pnpm** | Package manager with workspace protocol |
 | **Turborepo** | Task runner (`build`, `dev`, `lint`) |
 | **tsup** | CLI bundler (ESM + DTS) |
@@ -171,6 +177,8 @@ pnpm --filter cli build   # Build CLI only
 pnpm --filter web build   # Build web only
 pnpm --filter web dev     # Dev server for web
 ```
+
+---
 
 ## Directory Layout
 
@@ -216,11 +224,12 @@ ai-agent-kit/
 │   ├── skill-base/
 │   └── find-docs/
 │
-├── workflows/                  # Embedded workflows (future)
+├── workflows/                  # Embedded workflows
+│
+├── mcp_servers/                # Embedded MCP configurations
 │
 ├── docs/                       # Documentation
-│   ├── ARCHITECTURE.md         # This file
-│   └── CONTRIBUTING.md         # How to contribute
+│   └── ARCHITECTURE.md         # This file
 │
 ├── .github/
 │   └── workflows/
@@ -230,6 +239,20 @@ ai-agent-kit/
 ├── pnpm-workspace.yaml
 ├── turbo.json
 ├── package.json                # Root (private)
+├── AGENTS.md                   # Next.js AI agent rules
+├── CLAUDE.md                   # General AI agent instructions pointer
+├── CONTRIBUTING.md             # How to contribute
 ├── README.md
+├── CHANGELOG.md                # Project history
+├── BACKLOG.md                  # Future tasks & enhancements
 └── LICENSE (MIT)
 ```
+
+---
+
+## Conventions
+
+- **Formatting & Linting**: We use a strict custom ESLint flat config (`@stylistic/eslint-plugin`). Prettier is **not** used. We enforce specific layout rules (e.g., 3 blank lines after imports, 2 blank lines between blocks).
+- **Package Management**: Monorepo uses `pnpm` workspace protocol.
+- **Versioning**: The project uses `Changesets` to automate and sync versioning across packages.
+- **AI Agent Context**: Key LLM system prompts (`CLAUDE.md`, `AGENTS.md`) sit at the repo root so they apply to all workspace packages. Markdown tables should be generated without excessive space padding.

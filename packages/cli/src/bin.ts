@@ -1,10 +1,10 @@
 import { Command } from "commander";
-
 import { listCommand } from "./commands/list.js";
 import { addCommand } from "./commands/add.js";
 import { removeCommand } from "./commands/remove.js";
 import { initCommand } from "./commands/init.js";
 import { startMcpServer } from "./mcp/server.js";
+
 
 
 const program = new Command();

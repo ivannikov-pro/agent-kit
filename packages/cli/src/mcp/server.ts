@@ -1,10 +1,10 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
-
 import { listResources, findResource } from "../registry.js";
 import { installSkill } from "../installer.js";
 import type { SkillEntry } from "../types.js";
+
 
 
 export async function startMcpServer(): Promise<void> {
@@ -20,7 +20,7 @@ export async function startMcpServer(): Promise<void> {
     "List all available AI agent resources (skills, workflows, MCP configs)",
     {
       type: z
-        .enum(["skill", "workflow", "mcp"])
+        .enum(["skill", "workflow", "mcp server"])
         .optional()
         .describe("Filter by resource type"),
     },
@@ -29,7 +29,7 @@ export async function startMcpServer(): Promise<void> {
         ? {
           skills: type === "skill",
           workflows: type === "workflow",
-          mcp: type === "mcp",
+          mcp: type === "mcp server",
         }
         : undefined;
 
@@ -37,8 +37,7 @@ export async function startMcpServer(): Promise<void> {
 
       const text = resources
         .map(
-          (r) =>
-            `[${r.type}] ${r.name} — ${r.description}${r.tags ? ` (tags: ${r.tags.join(", ")})` : ""}`,
+          (r) => `[${r.type}] ${r.name} — ${r.description}${r.tags ? ` (tags: ${r.tags.join(", ")})` : ""}`,
         )
         .join("\n");
 
@@ -99,7 +98,7 @@ export async function startMcpServer(): Promise<void> {
         };
       }
 
-      if (result.type === "mcp") {
+      if (result.type === "mcp server") {
         return {
           content: [
             {
@@ -136,10 +135,9 @@ export async function startMcpServer(): Promise<void> {
       const q = query.toLowerCase();
 
       const matches = resources.filter(
-        (r) =>
-          r.name.toLowerCase().includes(q) ||
-          r.description.toLowerCase().includes(q) ||
-          r.tags?.some((t) => t.toLowerCase().includes(q)),
+        (r) => r.name.toLowerCase().includes(q)
+          || r.description.toLowerCase().includes(q)
+          || r.tags?.some((t) => t.toLowerCase().includes(q)),
       );
 
       if (matches.length === 0) {

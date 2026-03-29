@@ -1,9 +1,9 @@
 import ora from "ora";
-
 import { findResource, loadRegistry } from "../registry.js";
 import { installSkill, installWorkflow } from "../installer.js";
 import { log } from "../utils/logger.js";
 import type { AddOptions, SkillEntry, WorkflowEntry } from "../types.js";
+
 
 
 export async function addCommand(
@@ -22,7 +22,7 @@ export async function addCommand(
       const allNames = [
         ...Object.keys(registry.skills),
         ...Object.keys(registry.workflows),
-        ...Object.keys(registry.mcp),
+        ...Object.keys(registry.mcp_servers),
       ];
 
       if (allNames.length > 0) {
@@ -53,14 +53,13 @@ export async function addCommand(
       );
 
       spinner.succeed(`Workflow "${name}" installed to ${targetDir}`);
-    } else if (result.type === "mcp") {
+    } else if (result.type === "mcp server") {
       spinner.info(
         `"${name}" is an MCP package. Install via: npm install ${(result.entry as { package: string }).package}`,
       );
     }
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : String(error);
+    const message = error instanceof Error ? error.message : String(error);
 
     spinner.fail(`Failed to install "${name}": ${message}`);
   }

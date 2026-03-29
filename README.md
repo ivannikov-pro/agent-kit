@@ -20,22 +20,22 @@ ai-agent-kit/
 
 ```bash
 # List all available resources
-npx @ivannikov-pro/ai-agent-kit list
+npx @ivannikov-pro/ai-agent-kit@latest list
 
 # Install a skill into your project
-npx @ivannikov-pro/ai-agent-kit add skill-base
+npx @ivannikov-pro/ai-agent-kit@latest add skill-base
 
 # Install globally
-npx @ivannikov-pro/ai-agent-kit add find-docs --global
+npx @ivannikov-pro/ai-agent-kit@latest add find-docs --global
 
 # Interactive project setup
-npx @ivannikov-pro/ai-agent-kit init
+npx @ivannikov-pro/ai-agent-kit@latest init
 ```
 
 ## CLI Commands
 
 | Command | Description |
-|---------|-------------|
+| --- | --- |
 | `ai-agent-kit list` | List all available resources |
 | `ai-agent-kit list --skills` | List only skills |
 | `ai-agent-kit add <name>` | Install a skill or workflow |
@@ -53,7 +53,7 @@ Add to your AI agent's MCP config:
   "mcpServers": {
     "ai-agent-kit": {
       "command": "npx",
-      "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
+      "args": ["-y", "@ivannikov-pro/ai-agent-kit@latest", "mcp"]
     }
   }
 }
@@ -62,7 +62,7 @@ Add to your AI agent's MCP config:
 ### MCP Tools
 
 | Tool | Description |
-|------|-------------|
+| --- | --- |
 | `list_resources` | List skills, workflows, and MCP configs |
 | `install_resource` | Install a resource by name |
 | `search_resources` | Search by keyword or tag |
@@ -83,14 +83,14 @@ await kit.install("find-docs");
 ### Skills
 
 | Name | Description |
-|------|-------------|
+| --- | --- |
 | `skill-base` | How to create, maintain, and distribute AI agent skills |
 | `find-docs` | Documentation lookup via Context7 MCP |
 
 ### MCP Configs
 
 | Name | Package |
-|------|---------|
+| --- | --- |
 | `ai-notify-tg` | `@ivannikov-pro/ai-notify-tg` |
 
 ## Development
@@ -110,7 +110,7 @@ pnpm --filter cli build   # Build CLI only
 ## Environment Variables
 
 | Variable | Description |
-|----------|-------------|
+| --- | --- |
 | `GITHUB_TOKEN` / `GH_TOKEN` | GitHub token for higher API rate limits |
 
 ## License

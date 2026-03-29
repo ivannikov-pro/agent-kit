@@ -1,14 +1,14 @@
 import chalk from "chalk";
-
 import { listResources } from "../registry.js";
 import type { ListOptions } from "../types.js";
+
 
 
 export async function listCommand(options: ListOptions): Promise<void> {
   const resources = await listResources({
     skills: options.skills,
     workflows: options.workflows,
-    mcp: options.mcp,
+    mcp: options.mcp_servers,
   });
 
   if (resources.length === 0) {

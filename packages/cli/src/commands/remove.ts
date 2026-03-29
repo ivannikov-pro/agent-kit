@@ -1,7 +1,9 @@
 import ora from "ora";
-
-import { removeDir, getSkillsDir, getWorkflowsDir, dirExists, fileExists } from "../utils/fs.js";
+import {
+ removeDir, getSkillsDir, getWorkflowsDir, dirExists, fileExists
+} from "../utils/fs.js";
 import { log } from "../utils/logger.js";
+
 
 
 export async function removeCommand(name: string): Promise<void> {

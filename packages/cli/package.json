@@ -1,7 +1,41 @@
 {
   "name": "@ivannikov-pro/ai-agent-kit",
-  "version": "0.1.0",
   "description": "CLI + MCP server for installing AI agent skills, workflows, and MCP configs",
+  "version": "0.1.0",
+  "keywords": [
+    "ai-agent",
+    "agent-skills",
+    "skills",
+    "workflows",
+    "mcp",
+    "mcp-server",
+    "cli"
+  ],
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Aleksandr Ivannikov",
+    "email": "hi@ivannikov.pro",
+    "url": "https://ivannikov.pro"
+  },
+  "homepage": "https://github.com/ivannikov-pro/ivannikov-pro-platform#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform/issues",
+    "email": "hi@ivannikov.pro"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/"
+  },
   "type": "module",
   "bin": {
     "ai-agent-kit": "./dist/bin.js"
@@ -17,27 +51,6 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "lint": "eslint src/"
-  },
-  "keywords": [
-    "ai-agent",
-    "agent-skills",
-    "cli",
-    "mcp"
-  ],
-  "author": "ivannikov-pro",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ivannikov-pro/ai-agent-kit.git",
-    "directory": "packages/cli"
-  },
-  "engines": {
-    "node": ">=20"
-  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
     "chalk": "^5.4.1",
@@ -46,8 +59,14 @@
     "zod": "^3.25.17"
   },
   "devDependencies": {
+    "@ivannikov-pro/config-eslint": "workspace:*",
     "@types/node": "^22.15.0",
+    "eslint": "^9.0.0",
     "tsup": "^8.5.1",
     "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
   }
 }

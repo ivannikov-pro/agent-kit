@@ -1,6 +1,5 @@
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
-
 import matter from "gray-matter";
 
 
@@ -20,6 +19,22 @@ export type SkillData = {
 };
 
 
+export type WorkflowData = {
+  name: string;
+  description: string;
+  source: string;
+  content: string;
+};
+
+
+export type McpData = {
+  name: string;
+  description: string;
+  package: string;
+  content: string;
+};
+
+
 export type RegistryData = {
   version: string;
   skills: Record<
@@ -32,7 +47,7 @@ export type RegistryData = {
     }
   >;
   workflows: Record<string, { source: string; description: string }>;
-  mcp: Record<string, { package: string; description: string }>;
+  mcp_servers: Record<string, { package: string; description: string }>;
 };
 
 
@@ -100,4 +115,72 @@ export function loadAllSkills(): SkillData[] {
   }
 
   return skills;
+}
+
+
+export function loadWorkflow(name: string): WorkflowData | null {
+  const registry = loadRegistry();
+  const regData = registry.workflows[name];
+
+  if (!regData) {
+    return null;
+  }
+
+  const workflowsDir = join(getProjectRoot(), "workflows", name);
+  const mdPath = join(workflowsDir, "WORKFLOW.md");
+
+  let content = regData.description;
+
+  if (existsSync(mdPath)) {
+    const raw = readFileSync(mdPath, "utf-8");
+    const parsed = matter(raw);
+    content = parsed.content;
+  }
+
+  return {
+    name,
+    description: regData.description,
+    source: regData.source,
+    content,
+  };
+}
+
+
+export function loadAllWorkflows(): WorkflowData[] {
+  const registry = loadRegistry();
+  return Object.keys(registry.workflows).map((name) => loadWorkflow(name)!).filter(Boolean);
+}
+
+
+export function loadMcp(name: string): McpData | null {
+  const registry = loadRegistry();
+  const regData = registry.mcp_servers?.[name];
+
+  if (!regData) {
+    return null;
+  }
+
+  const mcpDir = join(getProjectRoot(), "mcp server", name);
+  const mdPath = join(mcpDir, "MCP.md");
+
+  let content = regData.description;
+
+  if (existsSync(mdPath)) {
+    const raw = readFileSync(mdPath, "utf-8");
+    const parsed = matter(raw);
+    content = parsed.content;
+  }
+
+  return {
+    name,
+    description: regData.description,
+    package: regData.package,
+    content,
+  };
+}
+
+
+export function loadAllMcp(): McpData[] {
+  const registry = loadRegistry();
+  return Object.keys(registry.mcp_servers || {}).map((name) => loadMcp(name)!).filter(Boolean);
 }

@@ -3,6 +3,7 @@ import { parseSource, downloadGitHubDir } from "./utils/github.js";
 import { ensureDir, getSkillsDir, getWorkflowsDir } from "./utils/fs.js";
 
 
+
 /**
  * Install a skill from the registry into the project.
  */

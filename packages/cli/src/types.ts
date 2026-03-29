@@ -1,4 +1,4 @@
-export type ResourceType = "skill" | "workflow" | "mcp";
+export type ResourceType = "skill" | "workflow" | "mcp server";
 
 
 export type SkillEntry = {
@@ -27,7 +27,7 @@ export type RegistryConfig = {
   version: string;
   skills: Record<string, SkillEntry>;
   workflows: Record<string, WorkflowEntry>;
-  mcp: Record<string, McpEntry>;
+  mcp_servers: Record<string, McpEntry>;
 };
 
 

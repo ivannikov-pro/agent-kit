@@ -1,0 +1,47 @@
+{
+  "name": "@ivannikov-pro/config-eslint",
+  "version": "0.1.0",
+  "description": "Shared ESLint configurations for IVANNIKOV.PRO platform",
+  "private": true,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Aleksandr Ivannikov",
+    "email": "hi@ivannikov.pro",
+    "url": "https://ivannikov.pro"
+  },
+  "homepage": "https://github.com/ivannikov-pro/ivannikov-pro-platform#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform/issues",
+    "email": "hi@ivannikov.pro"
+  },
+  "type": "module",
+  "main": "index.js",
+  "devDependencies": {
+    "@eslint/compat": "^2.0.3",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^9.39.4",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/utils": "^8.57.2",
+    "eslint": "^9.39.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^7.18.0"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  }
+}

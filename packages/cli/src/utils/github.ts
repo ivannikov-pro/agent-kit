@@ -2,6 +2,7 @@ import { writeFile, mkdir } from "node:fs/promises";
 import { join, dirname } from "node:path";
 
 
+
 const GITHUB_API = "https://api.github.com";
 
 /** Default repo for local: sources */
@@ -41,7 +42,9 @@ export function parseSource(source: string): ParsedSource {
     const path = source.replace("local:", "");
     const [owner, repo] = DEFAULT_REPO.split("/");
 
-    return { type: "local", owner, repo, path };
+    return {
+ type: "local", owner, repo, path
+};
   }
 
   if (source.startsWith("github:")) {
@@ -200,10 +203,9 @@ export async function downloadGitHubDir(
     ];
 
     const blobs = tree.filter(
-      (item) =>
-        item.type === "blob" &&
-        !skipPrefixes.some((p) => item.path.startsWith(p)) &&
-        !skipFiles.includes(item.path),
+      (item) => item.type === "blob"
+        && !skipPrefixes.some((p) => item.path.startsWith(p))
+        && !skipFiles.includes(item.path),
     );
 
     for (const blob of blobs) {
