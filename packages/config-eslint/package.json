@@ -1,8 +1,12 @@
 {
   "name": "@ivannikov-pro/config-eslint",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Shared ESLint configurations for IVANNIKOV.PRO platform",
   "private": true,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "license": "MIT",
   "author": {
     "name": "Aleksandr Ivannikov",
@@ -18,6 +22,7 @@
     "url": "https://github.com/ivannikov-pro/ivannikov-pro-platform/issues",
     "email": "hi@ivannikov.pro"
   },
+  "type": "module",
   "main": "index.js",
   "devDependencies": {
     "@eslint/compat": "^2.0.3",
@@ -38,6 +43,5 @@
   "engines": {
     "node": ">=20",
     "pnpm": ">=10"
-  },
-  "type": "module"
+  }
 }

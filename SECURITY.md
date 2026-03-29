@@ -10,7 +10,7 @@ We take the security of this AI agent monorepo—especially regarding integratio
 
 If you discover a security vulnerability or suspect an agent/prompt configuration could lead to unauthorized system access (`offensive` risk leak), please do **NOT** open a public issue. 
 
-Instead, please send an email to **[support@ivannikov.pro]** with the following details:
+Instead, please send an email to **[hi@ivannikov.pro]** with the following details:
 - A description of the vulnerability.
 - Steps to reproduce the issue.
 - Potential impact (e.g., system exposure, prompt leak, token exfiltration).

@@ -12,6 +12,10 @@
     "workflows"
   ],
   "private": true,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "license": "MIT",
   "author": {
     "name": "Aleksandr Ivannikov",

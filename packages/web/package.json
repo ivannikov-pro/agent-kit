@@ -1,7 +1,12 @@
 {
   "name": "@ivannikov-pro/ai-agent-kit-web",
   "version": "0.1.0",
+  "description": "Web-interface for AI agent skills, workflows, and MCP configs",
   "private": true,
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "license": "MIT",
   "author": {
     "name": "Aleksandr Ivannikov",
