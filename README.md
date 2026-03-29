@@ -20,16 +20,16 @@ ai-agent-kit/
 
 ```bash
 # List all available resources
-npx @ivannikov-pro/ai-agent-kit list
+npx @ivannikov-pro/ai-agent-kit@latest list
 
 # Install a skill into your project
-npx @ivannikov-pro/ai-agent-kit add skill-base
+npx @ivannikov-pro/ai-agent-kit@latest add skill-base
 
 # Install globally
-npx @ivannikov-pro/ai-agent-kit add find-docs --global
+npx @ivannikov-pro/ai-agent-kit@latest add find-docs --global
 
 # Interactive project setup
-npx @ivannikov-pro/ai-agent-kit init
+npx @ivannikov-pro/ai-agent-kit@latest init
 ```
 
 ## CLI Commands
@@ -53,7 +53,7 @@ Add to your AI agent's MCP config:
   "mcpServers": {
     "ai-agent-kit": {
       "command": "npx",
-      "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
+      "args": ["-y", "@ivannikov-pro/ai-agent-kit@latest", "mcp"]
     }
   }
 }

@@ -5,11 +5,18 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import { loadSkill, loadAllSkills } from "@/lib/data";
+import { CopyableCommand } from "@/components/CopyableCommand";
 
 
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   const skills = loadAllSkills();
+
+  if (skills.length === 0) {
+    return [{ name: "_empty" }];
+  }
 
   return skills.map((skill) => ({
     name: skill.name,
@@ -140,10 +147,10 @@ export default async function SkillPage({
           <div className="text-[11px] text-[var(--color-text-muted)] mb-2 uppercase tracking-wider font-medium">
             Install this skill
           </div>
-          <code className="text-sm text-[var(--color-accent)] font-[var(--font-mono)]">
-            <span className="text-[var(--color-text-muted)] mr-2">$</span>
-            npx @ivannikov-pro/ai-agent-kit add {skill.name}
-          </code>
+          <CopyableCommand 
+            className="text-sm text-[var(--color-accent)]"
+            command={`npx @ivannikov-pro/ai-agent-kit@latest add ${skill.name}`}
+          />
         </div>
       </header>
 

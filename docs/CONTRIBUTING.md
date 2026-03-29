@@ -63,7 +63,7 @@ pnpm --filter web dev
 5. Commit and push — the skill is now installable via:
 
 ```bash
-npx @ivannikov-pro/ai-agent-kit add my-skill
+npx @ivannikov-pro/ai-agent-kit@latest add my-skill
 ```
 
 ## Adding a New Workflow

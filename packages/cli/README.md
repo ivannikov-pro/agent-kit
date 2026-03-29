@@ -5,8 +5,8 @@
 ## Install
 
 ```bash
-npx @ivannikov-pro/ai-agent-kit list
-npx @ivannikov-pro/ai-agent-kit add <skill-name>
+npx @ivannikov-pro/ai-agent-kit@latest list
+npx @ivannikov-pro/ai-agent-kit@latest add <skill-name>
 ```
 
 ## CLI Commands
@@ -28,7 +28,7 @@ npx @ivannikov-pro/ai-agent-kit add <skill-name>
   "mcpServers": {
     "ai-agent-kit": {
       "command": "npx",
-      "args": ["-y", "@ivannikov-pro/ai-agent-kit", "mcp"]
+      "args": ["-y", "@ivannikov-pro/ai-agent-kit@latest", "mcp"]
     }
   }
 }

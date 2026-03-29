@@ -130,7 +130,7 @@ Central manifest mapping resource names to sources:
 ## Data Flow
 
 ```
-User runs:  npx @ivannikov-pro/ai-agent-kit add skill-base
+User runs:  npx @ivannikov-pro/ai-agent-kit@latest add skill-base
                 │
                 ▼
        ┌─ Load registry.json (local or GitHub fallback)
